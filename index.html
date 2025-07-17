@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Saran Senthur | Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.3s ease, color 0.3s ease;
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    html, body {
+      height: 100%;
+      min-height: 100vh;
+    }
+
+    body.light {
+     background: #f3f4f6; 
+     color: #111;
+    }
+
+
+    body.light .container {
+      border: 1px solid rgba(209, 213, 219, 0.6);
+      box-shadow: 0 8px 32px rgba(209, 213, 219, 0.4);
+      background:
+        radial-gradient(circle at center, rgba(243, 244, 246, 0.8), transparent 70%);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      color: #111;
+    }
+
+    body.light .container::before {
+      background: linear-gradient(135deg, rgba(243, 244, 246, 0.6), rgba(243, 244, 246, 0) 70%);
+    }
+
+    body.dark {
+        background: #000;
+        color: #eee;
+    }
+
+
+    body.dark .container {
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.75);
+      background:
+        radial-gradient(circle at center, rgba(255 255 255 / 0.15), transparent 70%);
+      color: #eee;
+    }
+
+    body.dark .container::before {
+      background: linear-gradient(135deg, rgba(255 255 255 / 0.15), rgba(255 255 255 / 0) 70%);
+    }
+
+    body.light header {
+      background:
+        radial-gradient(circle at center, rgba(243, 244, 246, 0.8), transparent 70%);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      border: 1px solid rgba(209, 213, 219, 0.6);
+      box-shadow: 0 8px 32px rgba(209, 213, 219, 0.4);
+      color: #111;
+    }
+
+    body.dark header {
+      background:
+        radial-gradient(circle at center, rgba(255 255 255 / 0.15), transparent 70%);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.75);
+      color: #eee;
+    }
+    body.light .btn-primary,
+    body.light .btn-secondary {
+        background-color: rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: #111;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    body.light .btn-primary:hover,
+    body.light .btn-secondary:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+        border-color: rgba(0, 0, 0, 0.2);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: none;
+      transition: color 0.3s ease;
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s ease;
+      color: inherit;
+    }
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    main {
+      padding-top: 4.5rem;
+    }
+    section {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: 7vw;
+      padding-right: 7vw;
+      box-sizing: border-box;
+    }
+
+    section#home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 80px); 
+  padding-top: 80px; 
+  padding-bottom: 40px;
+}
+
+    section#home .container {
+      margin-top: 0;
+      height: 75vh;
+      max-width: 86vw;
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      max-width: 86vw;
+      height: 80vh;
+      border-radius: 2.5rem;
+      padding: 3rem 4rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background:
+        radial-gradient(circle at center, rgba(255 255 255 / 0.2), transparent 70%);
+      transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      overflow: hidden;
+      color: inherit;
+    }
+
+    .container::before {
+      content: "";
+      position: absolute;
+      top: -20%;
+      left: -20%;
+      width: 140%;
+      height: 140%;
+      border-radius: 2.5rem;
+      background: linear-gradient(135deg, rgba(255 255 255 / 0.35), rgba(255 255 255 / 0) 70%);
+      pointer-events: none;
+      z-index: 1;
+      transition: background 0.3s ease;
+    }
+
+    #about .container {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      padding: 3rem 4rem;
+      gap: 2rem;
+    }
+
+    h1, h2 {
+      margin: 0 0 1rem 0;
+      z-index: 2;
+      position: relative;
+    }
+    p {
+      line-height: 1.7;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+      z-index: 2;
+      position: relative;
+      max-width: 720px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      z-index: 2;
+      position: relative;
+    }
+
+    .btn-primary, .btn-secondary {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 1rem;
+      border: 1px solid rgba(255 255 255 / 0.3);
+      background-color: rgba(255 255 255 / 0.15);
+      transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 12px rgba(255 255 255 / 0.2);
+      color: inherit;
+      font-weight: 600;
+      padding: 0.75rem 2rem;
+      text-decoration: none;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .btn-primary:hover, .btn-secondary:hover {
+      background-color: rgba(255 255 255 / 0.3);
+      border-color: rgba(255 255 255 / 0.5);
+      box-shadow: 0 6px 20px rgba(255 255 255 / 0.4);
+    }
+
+    @media (max-width: 768px) {
+      #about .container {
+        text-align: center;
+        padding: 2rem 1.5rem;
+      }
+      p {
+        max-width: 100%;
+      }
+      section {
+        padding-left: 5vw;
+        padding-right: 5vw;
+      }
+      section#home .container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+
+    .toggle-btn {
+      cursor: pointer;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      border: none;
+      background: transparent;
+      transition: transform 0.3s ease;
+      color: inherit;
+      margin-left: 1.5rem;
+    }
+    .toggle-btn svg {
+      width: 22px;
+      height: 22px;
+      stroke: currentColor;
+      fill: none;
+      transition: all 0.3s ease;
+    }
+
+  </style>
+</head>
+
+<body class="light">
+
+  <header>
+    <a href="#home" class="font-bold text-lg hover:text-blue-600 transition-colors">Saran Senthur</a>
+    <nav class="flex items-center">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#research">Research</a>
+      <a href="#contact">Contact Me</a>
+
+      <button aria-label="Toggle Dark Mode" class="toggle-btn" id="theme-toggle">
+        <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" >
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" style="display:none;">
+          <path d="M21 12.79A9 9 0 0112.21 3 7 7 0 0021 12.79z"></path>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <div class="container">
+        <h1 class="text-5xl font-bold leading-tight text-center">
+          Building Ideas<br />Through Code & Research
+        </h1>
+        <p style="max-width:600px; margin: 2rem auto; text-align:center;">
+          I'm Saran Senthur, a Computer Science undergraduate with a passion for artificial intelligence, impactful technology, and research-driven innovation.
+        </p>
+        <div class="hero-buttons">
+          <a href="#about" class="btn-primary">About Me</a>
+          <a href="/SaranSenthur_CV.pdf" class="btn-secondary" target="_blank" rel="noopener noreferrer">Download CV</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+        <div class="container flex flex-col items-center justify-center text-center gap-4">
+            <h2 class="text-4xl font-semibold">About Me</h2>
+            <p class="max-w-xl">
+                 I'm currently pursuing my undergraduate degree in Computer Science. My interests lie in machine learning, artificial intelligence, and building projects that bridge technology with real-world impact.
+            </p>
+            <p class="max-w-xl">
+                I actively contribute to open-source, write research papers, and continuously challenge myself through academic and self-initiated projects. My goal is to further my education with an MS in Computer Science in the USA.
+             </p>
+        </div>
+    </section>
+
+
+<section id="projects">
+  <div class="container text-center">
+    <h2 class="text-4xl font-semibold mb-6">Projects</h2>
+
+    <div class="max-w-xl mx-auto bg-white/20 dark:bg-white/[0.1] backdrop-blur-md border border-white/[0.15] rounded-xl p-6 text-left space-y-4">
+      <h3 class="text-2xl font-bold">AI Resume Analyzer</h3>
+      <p>
+        A smart AI-powered tool that parses resumes, extracts key sections, and provides analysis to help applicants improve their profile. Built using NLP & machine learning.
+      </p>
+      <a href="https://github.com/saransenthurwork/ai-resume-analyzer"
+         class="inline-block mt-2 text-blue-500 hover:underline">
+        View on GitHub →
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<section id="research">
+  <div class="container flex flex-col items-center justify-center text-center gap-4">
+    <h2 class="text-4xl font-semibold">Research</h2>
+    <h3 class="text-2xl font-semibold">
+      Optimizing Machine Learning: A Structured Approach to Efficient AI
+    </h3>
+    <p class="max-w-xl">
+      This paper explores key techniques to enhance machine learning efficiency, including pruning, quantization, transfer learning, and hardware acceleration. It presents a unified framework that reduces computational overhead while preserving model performance — ideal for resource-constrained environments.
+    </p>
+    <a 
+      href="https://ieeexplore.ieee.org/document/11040327" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      class="btn-secondary mt-2"
+    >
+      View on IEEE Xplore
+    </a>
+  </div>
+</section>
+
+
+
+<!-- Replace the existing <section id="contact">...</section> with this: -->
+
+<section id="contact">
+  <div class="container text-center">
+    <h2 class="text-4xl font-semibold mb-6">Contact Me</h2>
+    <form action="https://formspree.io/f/mblkjnzd" method="POST" target="_blank" class="flex flex-col gap-4 max-w-xl mx-auto text-left">
+      <label class="flex flex-col">
+        <span class="mb-1 font-semibold">Your Name</span>
+        <input
+          type="text"
+          name="name"
+          required
+          class="rounded-xl border border-gray-300 dark:border-gray-600 bg-white/30 dark:bg-white/10 px-4 py-2 backdrop-blur-md placeholder-gray-500 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </label>
+
+      <label class="flex flex-col">
+        <span class="mb-1 font-semibold">Your Email</span>
+        <input
+          type="email"
+          name="email"
+          required
+          class="rounded-xl border border-gray-300 dark:border-gray-600 bg-white/30 dark:bg-white/10 px-4 py-2 backdrop-blur-md placeholder-gray-500 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </label>
+
+      <label class="flex flex-col">
+        <span class="mb-1 font-semibold">Message</span>
+        <textarea
+          name="message"
+          rows="5"
+          required
+          class="rounded-xl border border-gray-300 dark:border-gray-600 bg-white/30 dark:bg-white/10 px-4 py-2 backdrop-blur-md placeholder-gray-500 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+        ></textarea>
+      </label>
+
+      <button
+        type="submit"
+        class="btn-primary mt-4 self-start"
+      >
+        Send Message
+      </button>
+    </form>
+  </div>
+</section>
+
+  </main>
+
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const htmlElement = document.documentElement;
+    const bodyElement = document.body;
+    const iconSun = document.getElementById('icon-sun');
+    const iconMoon = document.getElementById('icon-moon');
+
+    if (
+      localStorage.getItem('theme') === 'dark' ||
+      (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      htmlElement.classList.add('dark');
+      htmlElement.classList.remove('light');
+      bodyElement.classList.add('dark');
+      bodyElement.classList.remove('light');
+      iconSun.style.display = 'none';
+      iconMoon.style.display = 'block';
+    } else {
+      htmlElement.classList.add('light');
+      htmlElement.classList.remove('dark');
+      bodyElement.classList.add('light');
+      bodyElement.classList.remove('dark');
+      iconSun.style.display = 'block';
+      iconMoon.style.display = 'none';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      if (htmlElement.classList.contains('dark')) {
+        htmlElement.classList.remove('dark');
+        htmlElement.classList.add('light');
+        bodyElement.classList.remove('dark');
+        bodyElement.classList.add('light');
+        iconSun.style.display = 'block';
+        iconMoon.style.display = 'none';
+        localStorage.setItem('theme', 'light');
+      } else {
+        htmlElement.classList.add('dark');
+        htmlElement.classList.remove('light');
+        bodyElement.classList.add('dark');
+        bodyElement.classList.remove('light');
+        iconSun.style.display = 'none';
+        iconMoon.style.display = 'block';
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  </script>
+</body>
+</html>
