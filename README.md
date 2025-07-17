@@ -31,7 +31,7 @@ Built with **HTML**, **Tailwind CSS**, and **JavaScript**, this responsive site 
 
 ## 🚀 Live Demo
 
-Coming soon via GitHub Pages...
+🔗 [View Portfolio](https://saransenthurwork.github.io/portfolio/)
 
 ---
 
